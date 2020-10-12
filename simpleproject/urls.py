@@ -20,6 +20,9 @@ from django.conf.urls import url
 from boards import views
 
 urlpatterns = [
-    url(r'^homepage/$', views.home, name='home'),
+    path('', views.home, name='home'),
+    # path('boards/<pk>', views.board_topics, name='board_topics'),
+    url(r'^boards/(?P<pk>\d+)/$', views.board_topics, name='board_topics'),
+    url(r'^boards/(?P<pk>\d+)/new/$', views.new_topic, name='new_topic'),
     path('admin/', admin.site.urls),
 ]
