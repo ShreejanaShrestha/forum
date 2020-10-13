@@ -35,8 +35,8 @@ urlpatterns = [
     path('reset/done/', auth_views.PasswordResetDoneView.as_view(template_name='password_reset_done.html'),
          name='password_reset_done'),
     url(r'^reset/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$',
-         auth_views.PasswordResetConfirmView.as_view(template_name='password_reset_confirm.html'),
-         name='password_reset_confirm'),
+        auth_views.PasswordResetConfirmView.as_view(template_name='password_reset_confirm.html'),
+        name='password_reset_confirm'),
     path('reset/complete/',
          auth_views.PasswordResetCompleteView.as_view(template_name='password_reset_complete.html'),
          name='password_reset_complete'),
@@ -49,5 +49,6 @@ urlpatterns = [
     url(r'^boards/(?P<pk>\d+)/$', views.board_topics, name='board_topics'),
     url(r'^boards/(?P<pk>\d+)/new/$', views.new_topic, name='new_topic'),
     url(r'^boards/(?P<pk>\d+)/topics/(?P<topic_pk>\d+)/$', views.topic_posts, name='topic_posts'),
+    url(r'^boards/(?P<pk>\d+)/topics/(?P<topic_pk>\d+)/reply/$', views.reply_topic, name='reply_topic'),
     path('admin/', admin.site.urls),
 ]
