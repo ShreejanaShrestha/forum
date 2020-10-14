@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+simpleproject/.env
+../venv/
+.env
+
+
+# SQLite database files
+
+*.sqlite3
